@@ -88,3 +88,8 @@ truncate :: (Integral b, RealFrac a) => a -> b
 ```[3^n | n <- [1..10]]``` - list created by raising all elements of the list to the 3rd power
 
 ```[[x * y | y <- [1..10]] | x <- [1..10]]``` - creating multiplication table
+
+## WORKING WITH FUNCTIONS
+
+* Function name must start with a lowercase letter
+* Function must return a value
