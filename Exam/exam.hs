@@ -87,8 +87,8 @@ joinStep1 studentList scoresList = map (\student -> (student, scoresList)) stude
 
 -- Zad. 12
 
-joinStep2 :: [(Student, [Score])] -> [[Maybe StudentWithScores]]
-joinStep2 list = map (\(student, scores) -> mapToJoin student scores -> mapToJoin ) list
+-- joinStep2 :: [(Student, [Score])] -> [[Maybe StudentWithScores]]
+-- joinStep2 list = map (\(student, scores) -> mapToJoin student scores -> mapToJoin ) list
 
 -- Zad. 13
 
@@ -98,4 +98,22 @@ joinStep2 list = map (\(student, scores) -> mapToJoin student scores -> mapToJoi
 
 class (Ord a) => Id a where
     toInt :: a -> Int
-  
+
+-- Zad. 16
+
+class HasId a where
+    getId :: (Id b) => a b -> b
+
+-- Zad. 20
+
+reverseString :: [Char] -> [Char]
+reverseString xs = foldl (\acc x -> x:acc) [] xs
+
+toUpperString :: [Char] -> [Char]
+toUpperString xs = map (\x -> toUpper x) xs
+
+hello = do
+  putStrLn "What's your name?"
+  name <- getLine
+  putStrLn $ toUpperString name ++ " hello"
+  putStrLn $ "goodbye " ++ reverseString name
